@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthProvider";
 import toast from "react-hot-toast";
+import axios from "axios";
 
 const Login = () => {
 
@@ -31,16 +32,27 @@ const Login = () => {
         }
     }
 
-    const handleGoogleLogin = async () => {
-        try {
-            await signInWithGoogle();
-            toast.success("User Login successfully");
-            navigate(location?.state ? location?.state : "/");
-        }
-        catch (error) {
-            toast.error(error.message);
-        }
-    }
+    const handleGoogleLogin = () => {
+      signInWithGoogle()
+      .then(res => {
+        const user = res.user;
+        const name = user?.displayName;
+        const email = user?.email;
+        const image = user?.photoURL;
+        const userInfo = {name, email, image};
+        axios.post('http://localhost:5000/users', userInfo)
+        .then(() => {
+          toast.success("User successfully logged in");
+          navigate(location?.state ? location.state : "/");
+        })
+        .catch((error) => {
+          toast.error(error.message);
+        });
+      })
+        .catch((error) => {
+          toast.error(error.message);
+        });
+    };
   return (
     <>
       <motion.div

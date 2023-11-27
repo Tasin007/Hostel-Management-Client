@@ -10,10 +10,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@heroicons/react": "^1.0.6",
+    "@mui/material": "^5.14.18",
+    "axios": "^1.6.2",
     "firebase": "^10.6.0",
     "framer-motion": "^10.16.5",
     "heroicons": "^2.0.18",
@@ -25,6 +29,7 @@
     "react-hot-toast": "^2.4.1",
     "react-router-dom": "^6.20.0",
     "react-simple-typewriter": "^5.0.1",
+    "react-tabs": "^6.0.2",
     "sort-by": "^1.2.0"
   },
   "devDependencies": {
