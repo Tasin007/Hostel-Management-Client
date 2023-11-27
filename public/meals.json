@@ -1,0 +1,155 @@
+[
+    {
+      "category": "Breakfast",
+      "title": "Classic Pancakes",
+      "image": "https://i.ibb.co/MNjd3j8/Pancakes.jpg",
+      "rating": 4.5,
+      "price": 8.99,
+      "meal_distributor": "Tasin",
+      "meal_distributor_admin": "Tasin",
+      "meal_distributor_email": "mdtasinalam.mta@gmail.com",
+      "ingredients": ["Flour", "Milk", "Eggs", "Maple Syrup", "Butter"],
+      "description": "Fluffy pancakes served with a generous drizzle of maple syrup and melted butter."
+      
+    },
+    {
+      "category": "Breakfast",
+      "title": "Avocado Toast",
+      "image": "https://i.ibb.co/TRJxQLS/Avocado-Toast.jpg",
+      "rating": 4.2,
+      "price": 10.99,
+      "meal_distributor": "Tasin",
+      "meal_distributor_admin": "Tasin",
+      "meal_distributor_email": "mdtasinalam.mta@gmail.com",
+      "ingredients": [
+        "Whole Wheat Bread",
+        "Avocado",
+        "Cherry Tomatoes",
+        "Eggs",
+        "Salt"
+      ],
+      "description": "A healthy and delicious breakfast featuring mashed avocado on whole wheat toast, topped with cherry tomatoes and a sprinkle of salt."
+      
+    },
+    {
+      "category": "Breakfast",
+      "title": "Omelette Supreme",
+      "image": "https://i.ibb.co/R3tnBYF/Omelette-Supreme.jpg",
+      "rating": 4.8,
+      "price": 12.99,
+      "meal_distributor": "Tasin",
+      "meal_distributor_admin": "Tasin",
+      "meal_distributor_email": "mdtasinalam.mta@gmail.com",
+      "ingredients": ["Eggs", "Spinach", "Mushrooms", "Cheese", "Bell Peppers"],
+      "description": "A hearty omelette filled with spinach, mushrooms, cheese, and bell peppers, served with toast on the side."
+      
+    },
+    {
+      "category": "Lunch",
+      "title": "Chicken Caesar Salad",
+      "image": "https://i.ibb.co/4JRMwg5/Chicken-Caesar-Salad.jpg",
+      "rating": 4.6,
+      "price": 14.99,
+      "meal_distributor": "Anfal",
+      "meal_distributor_admin": "Anfal",
+      "meal_distributor_email": "ratulcse1@gmail.com",
+      "ingredients": [
+        "Chicken",
+        "Romaine Lettuce",
+        "Croutons",
+        "Parmesan Cheese",
+        "Caesar Dressing"
+      ],
+      "description": "A classic Caesar salad with grilled chicken, crisp romaine lettuce, croutons, Parmesan cheese, and Caesar dressing."
+      
+    },
+    {
+      "category": "Lunch",
+      "title": "Vegetarian Wrap",
+      "image": "https://i.ibb.co/Fg28JFR/Vegetarian-Wrap.jpg",
+      "rating": 4.4,
+      "price": 11.99,
+      "meal_distributor": "Anfal",
+      "meal_distributor_admin": "Anfal",
+      "meal_distributor_email": "ratulcse1@gmail.com",
+      "ingredients": [
+        "Whole Wheat Wrap",
+        "Hummus",
+        "Cucumbers",
+        "Tomatoes",
+        "Lettuce"
+      ],
+      "description": "A delicious and healthy vegetarian wrap with hummus, fresh cucumbers, tomatoes, and lettuce in a whole wheat wrap."
+      
+    },
+    {
+      "category": "Lunch",
+      "title": "Grilled Salmon",
+      "image": "https://i.ibb.co/Xxx1tsP/Grilled-Salmon.jpg",
+      "rating": 4.7,
+      "price": 16.99,
+      "meal_distributor": "Anfal",
+      "meal_distributor_admin": "Anfal",
+      "meal_distributor_email": "ratulcse1@gmail.com",
+      "ingredients": ["Salmon", "Asparagus", "Lemon", "Dill", "Olive Oil"],
+      "description": "Perfectly grilled salmon served with roasted asparagus, lemon wedges, and a drizzle of dill-infused olive oil."
+      
+    },
+    {
+      "category": "Dinner",
+      "title": "Spaghetti Bolognese",
+      "image": "https://i.ibb.co/rbqPVYv/Spaghetti-Bolognese.jpg",
+      "rating": 4.9,
+      "price": 18.99,
+      "meal_distributor": "Shabab",
+      "meal_distributor_admin": "Shabab",
+      "meal_distributor_email": "shariermirshabab@gmail.com",
+      "ingredients": [
+        "Ground Beef",
+        "Tomato Sauce",
+        "Spaghetti",
+        "Parmesan Cheese"
+      ],
+      "description": "A classic spaghetti Bolognese with savory ground beef, rich tomato sauce, and grated Parmesan cheese."
+      
+    },
+    {
+      "category": "Dinner",
+      "title": "Mushroom Risotto",
+      "image": "https://i.ibb.co/1MC7LCj/Mushroom-Risotto.jpg",
+      "rating": 4.3,
+      "price": 15.99,
+      "meal_distributor": "Shabab",
+      "meal_distributor_admin": "Shabab",
+      "meal_distributor_email": "shariermirshabab@gmail.com",
+      "ingredients": [
+        "Arborio Rice",
+        "Mushrooms",
+        "Parmesan Cheese",
+        "White Wine",
+        "Chicken Broth"
+      ],
+      "description": "Creamy mushroom risotto made with Arborio rice, sautéed mushrooms, Parmesan cheese, and a splash of white wine."
+      
+    },
+    {
+      "category": "Dinner",
+      "title": "Steak with Garlic Butter",
+      "image": "https://i.ibb.co/LSkd7gV/Steak-with-Garlic-Butter.jpg",
+      "rating": 4.8,
+      "price": 22.99,
+      "meal_distributor": "Shabab",
+      "meal_distributor_admin": "Shabab",
+      "meal_distributor_email": "shariermirshabab@gmail.com",
+      "ingredients": [
+        "Ribeye Steak",
+        "Garlic Butter",
+        "Rosemary",
+        "Mashed Potatoes",
+        "Green Beans"
+      ],
+      "description": "Juicy ribeye steak cooked to perfection, topped with garlic butter, and served with mashed potatoes and green beans."
+      
+    }
+  ]
+  
