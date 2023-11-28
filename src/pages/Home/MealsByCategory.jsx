@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import MealCard from './MealCard'; // Import your MealCard component
-import { Link } from 'react-router-dom';
 import Grid from '@mui/material/Grid';
 
 const MealsByCategory = () => {

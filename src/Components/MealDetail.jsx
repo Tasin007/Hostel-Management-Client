@@ -1,55 +1,59 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
 const MealDetails = () => {
-  const { _id } = useParams();
-  const [meal, setMeal] = useState(null);
-  const [liked, setLiked] = useState(false);
-  const [likesCount, setLikesCount] = useState(0);
+    const [meal, setMeal] = useState(null);
+    const [liked, setLiked] = useState(false);
+    const [likesCount, setLikesCount] = useState(0);
+    const { id } = useParams();
 
   useEffect(() => {
-    // Fetch meal details from your server using the _id parameter
-    fetch(`http://localhost:5000/meal/${_id}`) // Replace with your server API endpoint
+    // Fetch meal[0]? details from your server using the _id parameter
+    fetch(`http://localhost:5000/meal/${id}`) // Replace with your server API endpoint
       .then((response) => response.json())
-      .then((data) => setMeal(data))
-      .catch((error) => console.error('Error fetching meal details:', error));
-  }, [_id]);
+      .then((data) => 
+        setMeal(data)
+      )
+      .catch((error) => console.error('Error fetching mealdetails:', error));
+  }, [id]);
+
 
   const handleLikeClick = () => {
-    // Handle liking the meal
+    // Handle liking the meal[0]?
     if (!liked) {
       // Increment likes count and update liked state
       setLikesCount(likesCount + 1);
       setLiked(true);
 
-      // Send a request to your server to update the likes count for this meal
-      // Example: fetch(`/api/meal/${_id}/like`, { method: 'POST' });
+      // Send a request to your server to update the likes count for this meal[0]?
+      // Example: fetch(`/api/meal[0]?/${_id}/like`, { method: 'POST' });
     }
   };
 
   return (
     <div>
       {meal ? (
-        <div>
-          <img src={meal.image} alt={meal.title} />
-          <Typography variant="h4">{meal.title}</Typography>
-          <Typography variant="subtitle1">Admin: {meal.meal_distributor_admin}</Typography>
-          <Typography variant="body1">{meal.description}</Typography>
-          <Typography variant="body2">Ingredients: {meal.ingredients.join(', ')}</Typography>
-          <Typography variant="body2">Post Time: {meal.post_time}</Typography>
-          <Typography variant="body2">Rating: {meal.rating}</Typography>
+        <div className='max-w-7xl mx-auto'>
+          <img src={meal[0]?.image} alt={meal[0]?.title} />
+          <Typography variant="h4">{meal[0]?.title}</Typography>
+          <Typography variant="subtitle1">Admin: {meal[0]?._distributor_admin}</Typography>
+          <Typography variant="body1">Description:{meal[0]?.description}</Typography>
+          <Typography variant="body2">Ingredients: {meal[0]?.ingredients?.join(', ')}</Typography>
+          <Typography variant="body2">Post Time: {meal[0]?.post_time}</Typography>
+          <Typography variant="body2">Rating: {meal[0]?.rating}</Typography>
           <Button variant="outlined" onClick={handleLikeClick}>
             {liked ? 'Liked' : 'Like'}
           </Button>
           <Button variant="contained" color="primary">
-            Meal Request
+            meal[0]? Request
           </Button>
           {/* Render reviews here */}
         </div>
+       
       ) : (
-        <p>Loading meal details...</p>
+        <p>Loading  details...</p>
       )}
     </div>
   );

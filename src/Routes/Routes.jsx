@@ -3,6 +3,7 @@ import Root from "./Root";
 import Home from "../pages/Home/Home";
 import Login from "../pages/Auth/Login";
 import Register from "../pages/Auth/Register";
+import MealDetail from "../Components/MealDetail";
 
 export const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ export const router = createBrowserRouter([
           {
             path: "/register",
             element: <Register></Register>,
+          },
+          {
+            path: "/meal/:id",
+            element:<MealDetail></MealDetail>,
           },
     ]
   },

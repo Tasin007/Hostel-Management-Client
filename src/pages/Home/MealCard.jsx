@@ -4,12 +4,13 @@ import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import { Link } from 'react-router-dom'; 
+import { Link } from 'react-router-dom'; // Import Link for navigation
+
 const MealCard = ({ meal }) => {
   return (
-    <Card sx={{ maxWidth: 445 }}>
+    <Card sx={{ maxWidth: 500 }}>
       <CardMedia
-        sx={{ height: 240 }}
+        sx={{ height: 250 }}
         image={meal.image}
         title={meal.title}
       />
@@ -28,7 +29,7 @@ const MealCard = ({ meal }) => {
         </Typography>
       </CardContent>
       <CardActions>
-        {/* <Button size="small">Share</Button> */}
+        
         <Link to={`/meal/${meal._id}`} style={{ textDecoration: 'none' }}>
           <Button size="small">Details</Button>
         </Link>
