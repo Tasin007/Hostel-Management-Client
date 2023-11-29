@@ -47,10 +47,10 @@ function HealthNutritionSection() {
 
       {/* Nutrition Tips */}
       <div className="mb-8">
-        <h3 className="text-xl font-semibold mb-2">Nutrition Tips</h3>
+        <h3 className="text-2xl font-semibold mb-2">Nutrition Tips</h3>
         <ul className="list-disc list-inside">
           {nutritionTips.map((tip, index) => (
-            <li key={index} className="mb-2">{tip}</li>
+            <li key={index} className="mb-2 text-lg">{tip}</li>
           ))}
         </ul>
       </div>

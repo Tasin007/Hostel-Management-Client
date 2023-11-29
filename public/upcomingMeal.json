@@ -1,0 +1,32 @@
+[
+    {
+        "title": "Vegetarian Breakfast Burrito",
+        "image": "https://i.ibb.co/3d5Jr6p/Vegetarian-Breakfast-Burrito.jpg",
+        "likes": 0,
+        "description": "A healthy and delicious start with a mix of eggs, beans, and veggies wrapped in a soft tortilla."
+    },
+    {
+        "title": "Classic Chicken Salad",
+        "image": "https://i.ibb.co/sWMTDLg/Classic-Chicken-Salad.jpg",
+        "likes": 0,
+        "description": "Savory chicken salad with a blend of crunchy greens and a light, creamy dressing."
+    },
+    {
+        "title": "Italian Pasta Primavera",
+        "image": "https://i.ibb.co/drchc7f/Italian-Pasta-Primavera.jpg",
+        "likes": 0,
+        "description": "Fresh and colorful pasta dish loaded with seasonal vegetables and a hint of garlic and olive oil."
+    },
+    {
+        "title": "Spicy Thai Curry Noodles",
+        "image": "https://i.ibb.co/ZhZsT5F/Spicy-Thai-Curry-Noodles.jpg",
+        "likes": 0,
+        "description": "A bold and spicy Thai curry noodle dish with a rich coconut base and an assortment of veggies."
+    },
+    {
+        "title": "Mediterranean Quinoa Bowl",
+        "image": "https://i.ibb.co/M8ynmVt/Mediterranean-Quinoa-Bowl.jpg",
+        "likes": 0,
+        "description": "Nutritious quinoa bowl topped with feta, olives, tomatoes, and a light lemon dressing."
+    }
+]

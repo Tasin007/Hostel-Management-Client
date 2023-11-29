@@ -6,6 +6,7 @@ import Register from "../pages/Auth/Register";
 import MealDetail from "../Components/MealDetail";
 import MealsPage from "../pages/Meals/MealsPage";
 import UpcomingMeals from "../pages/upcomingMeals/UpcomingMeals";
+import UserDashboard from "../pages/UserDashboard/UserDashboard";
 
 export const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ export const router = createBrowserRouter([
           {
             path: "/upcomingmeals",
             element:<UpcomingMeals></UpcomingMeals>,
+          },
+          {
+            path: "/dashboard",
+            element:<UserDashboard></UserDashboard>,
           },
     ]
   },
