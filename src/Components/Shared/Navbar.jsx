@@ -87,7 +87,7 @@ const Navbar = () => {
                 Meals
               </NavLink>
               <NavLink
-                to="/upcoming-meals"
+                to="/upcomingmeals"
                 className="ml-8 whitespace-nowrap text-xs lg:text-base font-medium text-white hover:text-red-500"
               >
                 Upcoming Meals
