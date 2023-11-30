@@ -1,6 +1,6 @@
 import  { useState, useEffect } from 'react';
-import MealCard from '../Home/MealCard'; // Your MealCard component
-import InfiniteScroll from 'react-infinite-scroll-component'; // Import the infinite scroll component
+import MealCard from '../Home/MealCard'; 
+import InfiniteScroll from 'react-infinite-scroll-component'; 
 
 const MealsPage = () => {
   const [meals, setMeals] = useState([]);

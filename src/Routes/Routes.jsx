@@ -7,11 +7,13 @@ import MealDetail from "../Components/MealDetail";
 import MealsPage from "../pages/Meals/MealsPage";
 import UpcomingMeals from "../pages/upcomingMeals/UpcomingMeals";
 import UserDashboard from "../pages/UserDashboard/UserDashboard";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <ErrorPage />,
     children:[
         {
             path: '/',
