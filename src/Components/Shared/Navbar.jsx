@@ -1,5 +1,5 @@
+import React, { useContext, useState, useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../context/AuthProvider";
 import toast from "react-hot-toast";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,10 +7,19 @@ import { faBell } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false); // New state
-  const [userProfile, setUserProfile] = useState(null);
-  const { user, logOut } = useContext(AuthContext);
+  const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
+  const [userProfile, setUserProfile] = useState({ name: '', photo: '' }); // Define userProfile and setUserProfile here
+  const { user, logOut, badge } = useContext(AuthContext);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (user) {
+      setUserProfile({
+        name: user.displayName || user.email,  // Fallback to email if displayName is not available
+        photo: user.photoURL,
+      });
+    }
+  }, [user]);
 
   const handleLogOut = async () => {
     try {
@@ -21,13 +30,6 @@ const Navbar = () => {
       toast.error(err.message);
     }
   };
-
-  useEffect(() => {
-    setUserProfile({
-      name: user?.displayName,
-      photo: user?.photoURL,
-    });
-  }, [user?.displayName, user?.photoURL]);
 
   return (
     <div>
@@ -55,7 +57,6 @@ const Navbar = () => {
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
               >
                 <span className="sr-only">Open menu</span>
-                {/* Icon for menu button */}
                 <svg
                   className="h-6 w-6"
                   xmlns="http://www.w3.org/2000/svg"
@@ -73,44 +74,45 @@ const Navbar = () => {
                 </svg>
               </button>
             </div>
-            <div className="hidden md:flex items-center justify-end md:flex-1">
+            <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
               <NavLink
                 to="/"
-                className="whitespace-nowrap text-xs lg:text-base font-medium text-white hover:text-red-500"
+                className="whitespace-nowrap text-base font-medium text-white hover:text-red-500"
               >
                 Home
               </NavLink>
               <NavLink
                 to="/meals"
-                className="ml-8 whitespace-nowrap text-xs lg:text-base font-medium text-white hover:text-red-500"
+                className="ml-8 whitespace-nowrap text-base font-medium text-white hover:text-red-500"
               >
                 Meals
               </NavLink>
               <NavLink
                 to="/upcomingmeals"
-                className="ml-8 whitespace-nowrap text-xs lg:text-base font-medium text-white hover:text-red-500"
+                className="ml-8 whitespace-nowrap text-base font-medium text-white hover:text-red-500"
               >
                 Upcoming Meals
               </NavLink>
               <div className="ml-8 relative">
-                {/* Font Awesome Notification Icon */}
                 <FontAwesomeIcon
                   icon={faBell}
                   className="text-white hover:text-red-500 cursor-pointer"
                 />
-                
               </div>
-              {user?.email ? (
+              {user ? (
                 <div className="ml-8 relative">
                   <div
                     className="cursor-pointer"
-                    onClick={() => setIsProfileMenuOpen(!isProfileMenuOpen)} // Toggle profile menu visibility
+                    onClick={() => setIsProfileMenuOpen(!isProfileMenuOpen)}
                   >
                     <img
-                      className="inline-block h-8 w-8 rounded-full ring-2 ring-white dark:ring-gray-800"
-                      src={userProfile?.photo}
-                      alt="User Profile"
+                      className="h-8 w-8 rounded-full ring-2 ring-white"
+                      src={user.photoURL}
+                      alt="User"
                     />
+                    <span className="badge bg-gray-200 text-black px-2 py-1 rounded-full text-xs font-bold ml-2">
+                      {badge}
+                    </span>
                   </div>
                   <div
                     className={`${
@@ -118,11 +120,14 @@ const Navbar = () => {
                     } absolute top-0 right-0 mt-2 py-2 w-48 bg-white rounded-lg shadow-lg ring-1 ring-black ring-opacity-5`}
                   >
                     <div className="block px-4 py-2 text-xs text-black">
-                      {userProfile?.name}
+                      {user.displayName}
                     </div>
-                    <div className="block px-4 py-2 text-xs text-black hover:text-red-500">
+                    <NavLink
+                      to="/dashboard"
+                      className="block px-4 py-2 text-xs text-black hover:text-red-500"
+                    >
                       Dashboard
-                    </div>
+                    </NavLink>
                     <div
                       className="block px-4 py-2 text-xs text-black hover:text-red-500 cursor-pointer"
                       onClick={handleLogOut}
@@ -134,14 +139,13 @@ const Navbar = () => {
               ) : (
                 <NavLink
                   to="/login"
-                  className="ml-8 whitespace-nowrap text-xs lg:text-base font-medium text-white hover:text-red-500"
+                  className="ml-8 whitespace-nowrap text-base font-medium text-white hover:text-red-500"
                 >
                   Join Us
                 </NavLink>
               )}
             </div>
           </div>
-          {/* Mobile menu, show/hide based on menu state. */}
           <div
             className={`${
               isMenuOpen ? "block" : "hidden"
@@ -167,23 +171,20 @@ const Navbar = () => {
                 Upcoming Meals
               </NavLink>
             </div>
-            {/* Add more mobile menu items as needed */}
-            {user?.email ? (
+            {user ? (
               <div className="pt-4 pb-3 border-t border-gray-200">
                 <div className="flex items-center px-5">
-                  <div className="flex-shrink-0">
-                    <img
-                      className="h-10 w-10 rounded-full"
-                      src={userProfile?.photo}
-                      alt="User Profile"
-                    />
-                  </div>
+                  <img
+                    className="h-10 w-10 rounded-full"
+                    src={user.photoURL}
+                    alt="User"
+                  />
                   <div className="ml-3">
                     <div className="text-base font-medium text-gray-800">
-                      {userProfile?.name}
+                      {user.displayName}
                     </div>
                     <div className="text-sm font-medium text-gray-500">
-                      {user?.email}
+                      {user.email}
                     </div>
                   </div>
                 </div>
