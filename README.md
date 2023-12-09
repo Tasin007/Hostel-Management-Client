@@ -1,5 +1,5 @@
 Assignment Category: assignment12_category_0013
-Live Link:
+Live Link: hostel-management-client-site.vercel.app
 
 1.Responsive Design:
 The site is designed to be responsive, ensuring a seamless user experience across various devices, including mobiles, tablets, and desktops.
