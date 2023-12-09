@@ -1,5 +1,13 @@
-Assignment Category: assignment12_category_0013
-Live Link: hostel-management-client-site.vercel.app
+# Hostel Management System
+
+## Assignment Category: assignment12_category_0013
+
+Welcome to the Hostel Management System! This project is part of the assignment category `assignment12_category_0013`.
+
+### Live Link
+
+Check out the live version of the project [here](https://hostel-management-client-site.vercel.app).
+
 
 1.Responsive Design:
 The site is designed to be responsive, ensuring a seamless user experience across various devices, including mobiles, tablets, and desktops.
